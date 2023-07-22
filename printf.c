@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 	int i = 0, total_chars = 0;
 
 	if (!format || (*format == '%' && !*(format + 1)))
-		return (0);
+		return (-1);
 	va_start(ap, format);
 	while (format[i])
 	{
