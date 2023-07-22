@@ -12,7 +12,15 @@ int print_string(const char *str)
 	int printed_chars = 0;
 
 	if (!str)
-		return (0);
+	{
+		printed_chars += _putchar('(');
+		printed_chars += _putchar('n');
+		printed_chars += _putchar('u');
+		printed_chars += _putchar('l');
+		printed_chars += _putchar('l');
+		printed_chars += _putchar(')');
+		return (printed_chars);
+	}
 
 	while (str[i])
 	{
@@ -33,8 +41,7 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int i = 0, total_chars = 0;
 
-	if (!format || (*format == '%' && (!*(format + 1)
-	    || *(format + 1) == '!')))
+	if (!format || (*format == '%' && (!*(format + 1))))
 		return (-1);
 	va_start(ap, format);
 	while (format[i])
