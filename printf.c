@@ -11,12 +11,12 @@ int print_string(const char *str)
 	int i = 0;
 	int printed_chars = 0;
 
-	if (!s)
+	if (!str)
 		return (0);
 
-	while (s[i])
+	while (str[i])
 	{
-		printed_chars += _putchar(s[i]);
+		printed_chars += _putchar(str[i]);
 		i++;
 	}
 
