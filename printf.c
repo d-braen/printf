@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * print_string - prints string to output stream
@@ -30,6 +31,42 @@ int print_string(const char *str)
 
 	return (printed_chars);
 }
+
+/**
+ * print_number - prints an integer to stdout
+ * @num: number
+ *
+ * Return: number of digits printed
+ */
+int print_number(int num)
+{
+	int n = num;
+	int div = 1;
+	int digits = 0;
+
+	if (num < 0)
+	{
+		_putchar('-');
+		num *= -1;
+		n = num;
+	}
+	while (n >= 10)
+	{
+		n = n / 10;
+		div *= 10;
+	}
+
+	while (div)
+	{
+		_putchar('0' + num / div);
+		num %= div;
+		div /= 10;
+		digits++;
+	}
+
+	return (digits);
+}
+
 /**
  * _printf - print formatted string to std ouput
  * @format: char string with format
@@ -62,6 +99,11 @@ int _printf(const char *format, ...)
 			{
 				i++;
 				total_chars += print_string(va_arg(ap, char *));
+			}
+			else if (format[i + 1] == 'd')
+			{
+				total_chars += print_number(va_arg(ap, int));
+				i++;
 			}
 			else
 			{
