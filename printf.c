@@ -100,7 +100,7 @@ int _printf(const char *format, ...)
 				i++;
 				total_chars += print_string(va_arg(ap, char *));
 			}
-			else if (format[i + 1] == 'd')
+			else if (format[i + 1] == 'd' || format[i + 1] == 'i')
 			{
 				total_chars += print_number(va_arg(ap, int));
 				i++;
