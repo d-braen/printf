@@ -5,6 +5,6 @@
 
 int _putchar(char);
 int _printf(const char *format, ...);
-int print_base2(int);
+int print_base2(unsigned int);
 
 #endif
