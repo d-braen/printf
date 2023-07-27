@@ -41,15 +41,16 @@ int print_string(const char *str)
 int print_number(int num)
 {
 	int n = num;
-	int div = -1;
+	int div = 1;
 	int digits = 0;
 
-	if (num > 0)
+	if (num < 0)
 	{
+		digits += _putchar('-');
 		num *= -1;
 		n = num;
 	}
-	while (n <= -10)
+	while (n >= 10)
 	{
 		n = n / 10;
 		div *= 10;
