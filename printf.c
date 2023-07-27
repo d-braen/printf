@@ -45,7 +45,7 @@ int print_number(int num)
 	int div = -1;
 	int digits = 0;
 
-	if (num > 0)
+	if (num => 0)
 	{
 		positive = 1;
 		num *= -1;
