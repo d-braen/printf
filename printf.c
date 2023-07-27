@@ -46,7 +46,7 @@ int print_number(int num)
 
 	if (num < 0)
 	{
-		_putchar('-');
+		digits += _putchar('-');
 		num *= -1;
 		n = num;
 	}
