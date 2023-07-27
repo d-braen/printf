@@ -107,6 +107,11 @@ int _printf(const char *format, ...)
 				total_chars += print_number(va_arg(ap, int));
 				i++;
 			}
+			else if (format[i + 1] == 'b')
+			{
+				total_chars += print_base2(va_arg(ap, unsigned int));
+				i++;
+			}
 			else
 			{
 				total_chars += _putchar('%');
